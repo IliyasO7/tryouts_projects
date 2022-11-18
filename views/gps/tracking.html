@@ -4,28 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css' rel='stylesheet' />
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
+
+
     <title>Tracking Location</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        #map{
+            height: 100vh;
+            width: 100vw;
+        }
+
+    </style>
+
+    <script src="./script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
 </head>
 <body>
-    <button id="start">Start</button>
-    <button id="stop">Stop</button>
 
-    <script>
-        const coordinates = [];
-        const start =document.querySelector("#start");
-        const stop = document.querySelector("#stop");
+    
+    <div id='map'></div>
+       
 
-        start.addEventListener("click", ()=>{
-            navigator.geolocation.watchPosition(data=>{
-                console.log(data);
-                coordinates.push([data.coords.longitude,data.coords.longitude])
-
-                window.localStorage.setItem("coordinates", JSON.stringify(coordinates))
-
-
-            }, (error)=> console.log(error), {enableHighAccuracy:true})
-        })
-
-    </script>
 </body>
 </html>
