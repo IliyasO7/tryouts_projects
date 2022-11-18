@@ -3,7 +3,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWxpeWFzbzc3IiwiYSI6ImNsYWxhaG01YjAzbnY0MXRhbTdsMDlkbTkifQ.KRCQOPjEkNduPODxAEnhtQ';
         
         navigator.geolocation.watchPosition(successLocation, errorLocation, {enableHighAccuracy:true})
-        const coorData = [];
+       // const coorData = [];
 
         function successLocation(position){
             console.log(position);
@@ -19,7 +19,10 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWxpeWFzbzc3IiwiYSI6ImNsYWxhaG01YjAzbnY0MXRhb
                 zoom: 14
         });
 
-        map.on('load', () => {
+        sendLocation(center);
+
+        //for creating a line code is there  below
+       /* map.on('load', () => {
             console.log('[[[[[[[[[[[');
             map.addSource('route', {
             'type': 'geojson',
@@ -45,19 +48,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWxpeWFzbzc3IiwiYSI6ImNsYWxhaG01YjAzbnY0MXRhb
             'line-width': 8
             }
             });
-        });
+        });*/
 
         
-        
-
-     
-          
-          
-          
-          //******************************** */
-
-
-
         const nav = new mapboxgl.NavigationControl();
         map.addControl(nav);
 
@@ -73,8 +66,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaWxpeWFzbzc3IiwiYSI6ImNsYWxhaG01YjAzbnY0MXRhb
           console.log(directions);
           console.log('<>><><><><><<<><>');
 
-          sendLocation(center);
-
+        
 
           
 
